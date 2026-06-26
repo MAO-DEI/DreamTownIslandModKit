@@ -1,0 +1,22 @@
+﻿<Project>
+  <Target Name="DeployBepInExPlugin" AfterTargets="Build" Condition="'$(IsBepInExPlugin)' == 'true'">
+    <Warning
+      Text="GameDir does not exist: $(GameDir). Plugin DLL was not deployed."
+      Condition="!Exists('$(GameDir)')" />
+
+    <MakeDir
+      Directories="$(BepInExPluginsDir)"
+      Condition="Exists('$(GameDir)') and !Exists('$(BepInExPluginsDir)')" />
+
+    <Copy
+      SourceFiles="$(TargetPath)"
+      DestinationFolder="$(BepInExPluginsDir)"
+      SkipUnchangedFiles="true"
+      Condition="Exists('$(TargetPath)') and Exists('$(BepInExPluginsDir)')" />
+
+    <Message
+      Importance="high"
+      Text="Copied plugin DLL: $(TargetPath) -> $(BepInExPluginsDir)"
+      Condition="Exists('$(TargetPath)') and Exists('$(BepInExPluginsDir)')" />
+  </Target>
+</Project>

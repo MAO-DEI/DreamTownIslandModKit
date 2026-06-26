@@ -1,0 +1,14 @@
+﻿<Project>
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <GameDir>C:\Program Files (x86)\Steam\steamapps\common\Dream Town Island</GameDir>
+    <BepInExDir>$(GameDir)\BepInEx</BepInExDir>
+    <BepInExCoreDir>$(BepInExDir)\core</BepInExCoreDir>
+    <BepInExInteropDir>$(BepInExDir)\interop</BepInExInteropDir>
+    <BepInExPluginsDir>$(BepInExDir)\plugins</BepInExPluginsDir>
+  </PropertyGroup>
+</Project>

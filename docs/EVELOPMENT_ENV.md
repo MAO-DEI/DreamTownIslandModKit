@@ -412,6 +412,29 @@ MissingMethodException
 be.760
 ```
 
+## 坑六：只安装 .NET 8 SDK
+
+现象：
+
+dotnet new classlib -f net6.0
+
+提示：
+
+"net6.0 不是有效值"
+
+原因：
+
+安装的是 .NET 8 SDK，但没有安装 .NET 6 SDK，因此模板不支持直接创建 net6.0 项目。
+
+解决方案：
+
+同时安装：
+
+- .NET SDK 6.x
+- .NET SDK 8.x
+
+推荐长期保留两个 SDK。
+
 ---
 
 # 八、以后新增软件
